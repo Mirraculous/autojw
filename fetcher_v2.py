@@ -19,7 +19,7 @@ not_found_filename = f"{output_dir}/not_found.txt"
 error_filename = f"{output_dir}/errors.txt"
 checkpoint_filename = f"{output_dir}/checkpoint.json"
 
-Path.mkdir(output_dir, parents=True, exist_ok=True)
+Path(output_dir).mkdir(parents=True, exist_ok=True)
 
 result_list = []
 error_list = []
