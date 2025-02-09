@@ -94,7 +94,7 @@ def process_appname(appname, original_appname=None, is_trunc=False):
                         }
                         for item in result["items"][1:]
                     ],
-                    "original_appname": original_appname,
+                    "original_appname": original_appname or appname,
                 }
             )
         item = result["items"][0]
@@ -103,7 +103,7 @@ def process_appname(appname, original_appname=None, is_trunc=False):
                 "name": item["name"],
                 "id": item["id"],
                 "initial": item.get("price", {"initial": 0})["initial"],
-                "original_appname": original_appname,
+                "original_appname": original_appname or appname,
             }
         )
         if is_trunc:
