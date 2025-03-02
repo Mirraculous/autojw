@@ -31,8 +31,9 @@ with open(appnames_filename, "r", encoding="utf-8") as f:
         [
             "".join(
                 char
-                for char in line.strip().lower()
                 if char.isalnum() or char.isspace()
+                else " "
+                for char in line.strip().lower()
             )
             for line in f
         ]
