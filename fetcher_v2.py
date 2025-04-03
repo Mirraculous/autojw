@@ -110,9 +110,9 @@ def process_appname(appname, original_appname=None, is_trunc=False):
         if is_trunc:
             not_found_list.append({"appname": original_appname, "found_as": appname})
         return True
-    except Exception as e:
+    except BaseException as e:
         error_list.append(
-            {"appname": appname, "url": response.url, "exception": str(e)}
+            {"appname": appname, "params": params, "exception": str(e)}
         )
         return False
 
